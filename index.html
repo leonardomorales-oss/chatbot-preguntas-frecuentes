@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f2ff" />
+    <meta
+      name="description"
+      content="Chatbot sencillo de preguntas frecuentes creado con HTML, CSS y JavaScript."
+    />
+    <title>Chatbot de preguntas frecuentes</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <p class="eyebrow">Práctica de HTML, CSS y JavaScript</p>
+        <h1>Un chatbot sencillo</h1>
+        <p class="intro">
+          Escribe una pregunta y el asistente buscará una respuesta en su lista
+          predefinida.
+        </p>
+      </header>
+
+      <main>
+        <section class="chat-card" aria-labelledby="chat-title">
+          <div class="chat-heading">
+            <div class="avatar" aria-hidden="true">C</div>
+            <div>
+              <h2 id="chat-title">Chat de ayuda</h2>
+              <p class="status"><span class="status-dot"></span>Asistente activo</p>
+            </div>
+          </div>
+
+          <div
+            class="messages"
+            id="messages"
+            role="log"
+            aria-label="Conversación con el chatbot"
+            aria-live="polite"
+            aria-relevant="additions"
+          >
+            <div class="message message--bot">
+              <span class="message-author">Chatbot</span>
+              <p>¡Hola! Puedes preguntarme cómo estoy o qué puedo hacer.</p>
+            </div>
+          </div>
+
+          <form class="composer" id="chat-form" autocomplete="off">
+            <label for="user-input">Tu mensaje</label>
+            <div class="composer-row">
+              <input
+                id="user-input"
+                name="message"
+                type="text"
+                maxlength="240"
+                placeholder="Escribe aquí…"
+                aria-describedby="input-hint"
+                required
+              />
+              <button class="send-button" type="submit">
+                <span>Enviar</span>
+                <svg aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+                  <path d="M3 10h13M10 4l6 6-6 6" />
+                </svg>
+              </button>
+            </div>
+            <p class="input-hint" id="input-hint">
+              Presiona Enter o el botón para enviar.
+            </p>
+          </form>
+        </section>
+
+        <section class="examples" aria-labelledby="examples-title">
+          <h2 id="examples-title">Prueba con una de estas frases</h2>
+          <div class="example-list">
+            <button class="example-chip" type="button" data-question="hola">Hola</button>
+            <button class="example-chip" type="button" data-question="¿Cómo estás?">
+              ¿Cómo estás?
+            </button>
+            <button
+              class="example-chip"
+              type="button"
+              data-question="¿Qué puedes hacer?"
+            >
+              ¿Qué puedes hacer?
+            </button>
+            <button class="example-chip" type="button" data-question="adiós">Adiós</button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page-footer">
+        Proyecto de práctica · Respuestas definidas previamente en JavaScript
+      </footer>
+    </div>
+  </body>
+</html>
